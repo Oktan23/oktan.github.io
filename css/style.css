@@ -1,0 +1,196 @@
+/* Genel Ayarlar */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Sidebar Tasarımı */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: -250px; /* Sidebar gizli başlar */
+    transition: left 0.3s ease-in-out; /* Kayarak açılma efekti */
+    z-index: 1000;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar nav ul li {
+    text-align: center;
+    margin: 15px 0;
+}
+
+.sidebar nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    display: block;
+    padding: 10px;
+    transition: background 0.3s ease;
+}
+
+.sidebar nav ul li a:hover {
+    background-color: orange;
+}
+
+/* Hamburger Menü Tasarımı */
+.menu-icon {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.menu-icon img {
+    width: 25px;
+    height: 25px;
+}
+
+/* İçerik */
+main {
+    padding: 20px;
+    margin-left: 0;
+    transition: margin-left 0.3s ease-in-out; /* Sidebar açıldığında içerik kayması */
+}
+
+/* Sidebar Açıldığında */
+.sidebar.active {
+    left: 0;
+}
+
+main.active {
+    margin-left: 250px; /* İçerik sağa kayar */
+}
+
+/* Liste Stilleri */
+ul {
+    padding: 0;
+    margin: 20px 0;
+    list-style-type: square;
+}
+
+ul li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+/* Buton Stilleri */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: orange;
+}
+
+/* Sayfaya Özel Arka Plan Görselleri */
+.anasayfa {
+    background: url('../images/anasayfa.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-color: #f4f4f9; /* Görsel bulunamazsa varsayılan arka plan */
+}
+
+.hakkimda {
+    background: url('../images/hakkimda.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-color: #ffe4e1;
+}
+
+.projelerim {
+    background: url('../images/projelerim.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-color: #fafad2;
+}
+
+.iletisim {
+    background: url('../images/iletisim.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-color: #e6e6fa;
+}
+
+.hobilerim {
+    background: url('../images/hobilerim.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-color: #d3ffd3;
+}
+
+/* Form Tasarımı */
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Mobil Uyum */
+@media (max-width: 600px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sidebar nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    main {
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    form {
+        width: 90%;
+        padding: 15px;
+    }
+}
